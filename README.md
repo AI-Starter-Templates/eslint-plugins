@@ -45,4 +45,4 @@ Releases are driven by [Changesets](https://github.com/changesets/changesets):
 3. When the PR merges to `main`, the `Release` workflow opens (or updates) a "Version Packages" PR that bumps versions and updates changelogs.
 4. Merging that PR publishes the affected packages to npm with provenance.
 
-Publishing uses npm trusted publishing via GitHub OIDC — no `NPM_TOKEN` secret is required.
+Publishing authenticates with an `NPM_TOKEN` automation token (stored as a GitHub Actions secret) and signs each release with [npm provenance](https://docs.npmjs.com/generating-provenance-statements) via GitHub OIDC — every published version carries a "Built and signed on GitHub Actions" badge linking back to the workflow run.
