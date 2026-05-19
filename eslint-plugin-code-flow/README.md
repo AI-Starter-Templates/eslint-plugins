@@ -1,9 +1,6 @@
 # eslint-plugin-code-flow
 
-[![CI](https://github.com/agjs/eslint-plugin-code-flow/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/agjs/eslint-plugin-code-flow/actions/workflows/ci.yml)
-![Tests](https://img.shields.io/badge/tests-passing-brightgreen)
-![Typecheck](https://img.shields.io/badge/typecheck-passing-brightgreen)
-![Build](https://img.shields.io/badge/build-passing-brightgreen)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-code-flow?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-code-flow) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-code-flow)
 
 ESLint plugin for control-flow style rules: guard clauses over wrapped happy paths, and related patterns.
 
@@ -14,14 +11,14 @@ Functions that wrap their entire body in a positive `if` bury the happy path one
 ## Install
 
 ```sh
-pnpm add -D eslint-plugin-code-flow @typescript-eslint/parser
+pnpm add -D @boring-stack-pkg/eslint-plugin-code-flow @typescript-eslint/parser
 ```
 
 ## Usage (flat config)
 
 ```js
 import tsParser from "@typescript-eslint/parser";
-import codeFlow from "eslint-plugin-code-flow";
+import codeFlow from "@boring-stack-pkg/eslint-plugin-code-flow";
 
 export default [
   {
@@ -46,7 +43,7 @@ export default [
 Or use the built-in recommended config:
 
 ```js
-import codeFlow from "eslint-plugin-code-flow";
+import codeFlow from "@boring-stack-pkg/eslint-plugin-code-flow";
 
 export default [codeFlow.configs.recommended];
 ```

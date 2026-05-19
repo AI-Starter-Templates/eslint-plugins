@@ -1,9 +1,6 @@
 # eslint-plugin-elysia
 
-[![CI](https://github.com/agjs/eslint-plugin-elysia/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/agjs/eslint-plugin-elysia/actions/workflows/ci.yml)
-![Tests](https://img.shields.io/badge/tests-passing-brightgreen)
-![Typecheck](https://img.shields.io/badge/typecheck-passing-brightgreen)
-![Build](https://img.shields.io/badge/build-passing-brightgreen)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-elysia?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-elysia) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-elysia)
 
 ESLint plugin enforcing architectural, type-safety, lifecycle, and performance patterns in [Elysia.js](https://elysiajs.com/) applications.
 
@@ -16,7 +13,7 @@ This plugin pins those invariants down at lint time.
 ## Install
 
 ```sh
-pnpm add -D eslint-plugin-elysia @typescript-eslint/parser
+pnpm add -D @boring-stack-pkg/eslint-plugin-elysia @typescript-eslint/parser
 ```
 
 ## Usage (flat config)
@@ -24,7 +21,7 @@ pnpm add -D eslint-plugin-elysia @typescript-eslint/parser
 ```js
 // eslint.config.mjs
 import tsParser from "@typescript-eslint/parser";
-import elysia from "eslint-plugin-elysia";
+import elysia from "@boring-stack-pkg/eslint-plugin-elysia";
 
 export default [
   {

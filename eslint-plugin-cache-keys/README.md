@@ -1,9 +1,6 @@
 # eslint-plugin-cache-keys
 
-[![CI](https://github.com/agjs/eslint-plugin-cache-keys/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/agjs/eslint-plugin-cache-keys/actions/workflows/ci.yml)
-![Tests](https://img.shields.io/badge/tests-passing-brightgreen)
-![Typecheck](https://img.shields.io/badge/typecheck-passing-brightgreen)
-![Build](https://img.shields.io/badge/build-passing-brightgreen)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-cache-keys?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-cache-keys) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-cache-keys)
 
 ESLint rules preventing the most common cache-layer bugs:
 
@@ -22,7 +19,7 @@ because it requires you to declare your project's key-builder helpers.
 ## Install
 
 ```sh
-pnpm add -D eslint-plugin-cache-keys
+pnpm add -D @boring-stack-pkg/eslint-plugin-cache-keys
 ```
 
 Peer deps: `eslint >= 8.57`, `@typescript-eslint/parser >= 8`,
@@ -32,7 +29,7 @@ Peer deps: `eslint >= 8.57`, `@typescript-eslint/parser >= 8`,
 
 ```js
 import tsParser from "@typescript-eslint/parser";
-import cacheKeys from "eslint-plugin-cache-keys";
+import cacheKeys from "@boring-stack-pkg/eslint-plugin-cache-keys";
 
 export default [
   {
@@ -54,7 +51,7 @@ export default [
 Or use the bundled config (rules 1–2 enabled, rule 3 off):
 
 ```js
-import cacheKeys from "eslint-plugin-cache-keys";
+import cacheKeys from "@boring-stack-pkg/eslint-plugin-cache-keys";
 
 export default [cacheKeys.configs.recommended];
 ```

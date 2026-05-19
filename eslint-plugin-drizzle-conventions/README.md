@@ -1,9 +1,6 @@
 # eslint-plugin-drizzle-conventions
 
-[![CI](https://github.com/agjs/eslint-plugin-drizzle-conventions/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/agjs/eslint-plugin-drizzle-conventions/actions/workflows/ci.yml)
-![Tests](https://img.shields.io/badge/tests-passing-brightgreen)
-![Typecheck](https://img.shields.io/badge/typecheck-passing-brightgreen)
-![Build](https://img.shields.io/badge/build-passing-brightgreen)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-drizzle-conventions?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-drizzle-conventions) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-drizzle-conventions)
 
 ESLint plugin enforcing schema-quality and organization conventions for [Drizzle ORM](https://orm.drizzle.team/).
 
@@ -14,7 +11,7 @@ Drizzle gives you a typed schema, but nothing in the type system tells you that 
 ## Install
 
 ```sh
-pnpm add -D eslint-plugin-drizzle-conventions
+pnpm add -D @boring-stack-pkg/eslint-plugin-drizzle-conventions
 ```
 
 ## Usage (flat config)
@@ -22,7 +19,7 @@ pnpm add -D eslint-plugin-drizzle-conventions
 ```js
 // eslint.config.mjs
 import tsParser from "@typescript-eslint/parser";
-import drizzleConventions from "eslint-plugin-drizzle-conventions";
+import drizzleConventions from "@boring-stack-pkg/eslint-plugin-drizzle-conventions";
 
 export default [
   {

@@ -1,9 +1,6 @@
 # eslint-plugin-stripe-webhooks
 
-[![CI](https://github.com/agjs/eslint-plugin-stripe-webhooks/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/agjs/eslint-plugin-stripe-webhooks/actions/workflows/ci.yml)
-![Tests](https://img.shields.io/badge/tests-passing-brightgreen)
-![Typecheck](https://img.shields.io/badge/typecheck-passing-brightgreen)
-![Build](https://img.shields.io/badge/build-passing-brightgreen)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-stripe-webhooks?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-stripe-webhooks) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-stripe-webhooks)
 
 ESLint plugin enforcing security and correctness rules for Stripe webhook handlers.
 
@@ -19,7 +16,7 @@ These six rules pin down the patterns that prevent both.
 ## Install
 
 ```sh
-pnpm add -D eslint-plugin-stripe-webhooks @typescript-eslint/parser
+pnpm add -D @boring-stack-pkg/eslint-plugin-stripe-webhooks @typescript-eslint/parser
 ```
 
 ## Usage (flat config)
@@ -27,7 +24,7 @@ pnpm add -D eslint-plugin-stripe-webhooks @typescript-eslint/parser
 ```js
 // eslint.config.mjs
 import tsParser from "@typescript-eslint/parser";
-import stripeWebhooks from "eslint-plugin-stripe-webhooks";
+import stripeWebhooks from "@boring-stack-pkg/eslint-plugin-stripe-webhooks";
 
 export default [
   {

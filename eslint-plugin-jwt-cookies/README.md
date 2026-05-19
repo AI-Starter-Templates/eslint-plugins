@@ -1,9 +1,6 @@
 # eslint-plugin-jwt-cookies
 
-[![CI](https://github.com/agjs/eslint-plugin-jwt-cookies/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/agjs/eslint-plugin-jwt-cookies/actions/workflows/ci.yml)
-![Tests](https://img.shields.io/badge/tests-passing-brightgreen)
-![Typecheck](https://img.shields.io/badge/typecheck-passing-brightgreen)
-![Build](https://img.shields.io/badge/build-passing-brightgreen)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-jwt-cookies?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-jwt-cookies) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-jwt-cookies)
 
 ESLint rules that harden auth-cookie + password-hashing defaults:
 
@@ -24,7 +21,7 @@ quietly bypass it.
 ## Install
 
 ```sh
-pnpm add -D eslint-plugin-jwt-cookies
+pnpm add -D @boring-stack-pkg/eslint-plugin-jwt-cookies
 ```
 
 Peer deps: `eslint >= 8.57`, `@typescript-eslint/parser >= 8`,
@@ -34,7 +31,7 @@ Peer deps: `eslint >= 8.57`, `@typescript-eslint/parser >= 8`,
 
 ```js
 import tsParser from "@typescript-eslint/parser";
-import jwtCookies from "eslint-plugin-jwt-cookies";
+import jwtCookies from "@boring-stack-pkg/eslint-plugin-jwt-cookies";
 
 export default [
   {
@@ -53,7 +50,7 @@ export default [
 Or use the bundled config:
 
 ```js
-import jwtCookies from "eslint-plugin-jwt-cookies";
+import jwtCookies from "@boring-stack-pkg/eslint-plugin-jwt-cookies";
 
 export default [jwtCookies.configs.recommended];
 ```

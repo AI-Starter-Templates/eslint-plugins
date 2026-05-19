@@ -1,9 +1,6 @@
 # eslint-plugin-bullmq
 
-[![CI](https://github.com/agjs/eslint-plugin-bullmq/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/agjs/eslint-plugin-bullmq/actions/workflows/ci.yml)
-![Tests](https://img.shields.io/badge/tests-passing-brightgreen)
-![Typecheck](https://img.shields.io/badge/typecheck-passing-brightgreen)
-![Build](https://img.shields.io/badge/build-passing-brightgreen)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-bullmq?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-bullmq) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-bullmq)
 
 ESLint plugin enforcing operational-safety rules for [BullMQ](https://docs.bullmq.io/) projects.
 
@@ -16,7 +13,7 @@ These seven rules pin those patterns down at lint time so they fail in PR review
 ## Install
 
 ```sh
-pnpm add -D eslint-plugin-bullmq @typescript-eslint/parser
+pnpm add -D @boring-stack-pkg/eslint-plugin-bullmq @typescript-eslint/parser
 ```
 
 ## Usage (flat config)
@@ -24,7 +21,7 @@ pnpm add -D eslint-plugin-bullmq @typescript-eslint/parser
 ```js
 // eslint.config.mjs
 import tsParser from "@typescript-eslint/parser";
-import bullmq from "eslint-plugin-bullmq";
+import bullmq from "@boring-stack-pkg/eslint-plugin-bullmq";
 
 export default [
   {

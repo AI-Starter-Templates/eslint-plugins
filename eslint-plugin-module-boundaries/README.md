@@ -2,10 +2,7 @@
 
 ![Banner: eslint-plugin-module-boundaries — one semantic concern per TypeScript module](./docs/readme-banner.png)
 
-[![CI](https://github.com/agjs/eslint-plugin-module-boundaries/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/agjs/eslint-plugin-module-boundaries/actions/workflows/ci.yml)
-![Tests](https://img.shields.io/badge/tests-passing-brightgreen)
-![Typecheck](https://img.shields.io/badge/typecheck-passing-brightgreen)
-![Build](https://img.shields.io/badge/build-passing-brightgreen)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-module-boundaries?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-module-boundaries) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-module-boundaries)
 
 Production-oriented ESLint rules for deterministic TypeScript module cohesion.
 
@@ -18,14 +15,14 @@ AI-generated codebases often accumulate unrelated declarations in whichever file
 ## Install
 
 ```sh
-npm install --save-dev eslint-plugin-module-boundaries @typescript-eslint/parser
+npm install --save-dev @boring-stack-pkg/eslint-plugin-module-boundaries @typescript-eslint/parser
 ```
 
 ## Flat config
 
 ```js
 import tsParser from "@typescript-eslint/parser";
-import moduleBoundaries from "eslint-plugin-module-boundaries";
+import moduleBoundaries from "@boring-stack-pkg/eslint-plugin-module-boundaries";
 
 export default [
   {
@@ -51,7 +48,7 @@ export default [
 You can also use the built-in flat config:
 
 ```js
-import moduleBoundaries from "eslint-plugin-module-boundaries";
+import moduleBoundaries from "@boring-stack-pkg/eslint-plugin-module-boundaries";
 
 export default [moduleBoundaries.configs.recommended];
 ```

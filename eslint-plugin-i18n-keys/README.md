@@ -1,16 +1,13 @@
 # eslint-plugin-i18n-keys
 
-[![CI](https://github.com/agjs/eslint-plugin-i18n-keys/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/agjs/eslint-plugin-i18n-keys/actions/workflows/ci.yml)
-![Tests](https://img.shields.io/badge/tests-passing-brightgreen)
-![Typecheck](https://img.shields.io/badge/typecheck-passing-brightgreen)
-![Build](https://img.shields.io/badge/build-passing-brightgreen)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-i18n-keys?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-i18n-keys) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-i18n-keys)
 
 ESLint rule: **static** `t("…")` / `i18n.t("…")` translation keys must exist in a canonical JSON dictionary (nested keys use dot paths).
 
 ## Install
 
 ```sh
-pnpm add -D eslint-plugin-i18n-keys
+pnpm add -D @boring-stack-pkg/eslint-plugin-i18n-keys
 ```
 
 Peer deps: `eslint` 8.57 / 9+, `@typescript-eslint/parser` 8+, `typescript` 5+.

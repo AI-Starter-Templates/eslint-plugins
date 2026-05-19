@@ -17,7 +17,7 @@ React components benefit from enforcing a strict folder structure and separation
 ## Install
 
 ```sh
-pnpm add -D eslint-plugin-react-component-architecture @typescript-eslint/parser
+pnpm add -D @boring-stack-pkg/eslint-plugin-react-component-architecture @typescript-eslint/parser
 ```
 
 ## Usage (flat config)
@@ -25,7 +25,7 @@ pnpm add -D eslint-plugin-react-component-architecture @typescript-eslint/parser
 ```js
 // eslint.config.mjs
 import tsParser from "@typescript-eslint/parser";
-import reactComponentArchitecture from "eslint-plugin-react-component-architecture";
+import reactComponentArchitecture from "@boring-stack-pkg/eslint-plugin-react-component-architecture";
 
 export default [
   {

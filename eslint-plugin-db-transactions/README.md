@@ -1,9 +1,6 @@
 # eslint-plugin-db-transactions
 
-[![CI](https://github.com/agjs/eslint-plugin-db-transactions/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/agjs/eslint-plugin-db-transactions/actions/workflows/ci.yml)
-![Tests](https://img.shields.io/badge/tests-passing-brightgreen)
-![Typecheck](https://img.shields.io/badge/typecheck-passing-brightgreen)
-![Build](https://img.shields.io/badge/build-passing-brightgreen)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-db-transactions?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-db-transactions) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-db-transactions)
 
 ESLint rules enforcing transactional correctness in Drizzle (or any ORM
 with `db.transaction(async (tx) => ...)` APIs):
@@ -20,7 +17,7 @@ with `db.transaction(async (tx) => ...)` APIs):
 ## Install
 
 ```sh
-pnpm add -D eslint-plugin-db-transactions
+pnpm add -D @boring-stack-pkg/eslint-plugin-db-transactions
 ```
 
 Peer deps: `eslint >= 8.57`, `@typescript-eslint/parser >= 8`,
@@ -30,7 +27,7 @@ Peer deps: `eslint >= 8.57`, `@typescript-eslint/parser >= 8`,
 
 ```js
 import tsParser from "@typescript-eslint/parser";
-import dbTransactions from "eslint-plugin-db-transactions";
+import dbTransactions from "@boring-stack-pkg/eslint-plugin-db-transactions";
 
 export default [
   {
@@ -48,7 +45,7 @@ export default [
 Or use the bundled config:
 
 ```js
-import dbTransactions from "eslint-plugin-db-transactions";
+import dbTransactions from "@boring-stack-pkg/eslint-plugin-db-transactions";
 
 export default [dbTransactions.configs.recommended];
 ```

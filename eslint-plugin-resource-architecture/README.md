@@ -1,9 +1,6 @@
 # eslint-plugin-resource-architecture
 
-[![CI](https://github.com/agjs/eslint-plugin-resource-architecture/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/agjs/eslint-plugin-resource-architecture/actions/workflows/ci.yml)
-![Tests](https://img.shields.io/badge/tests-passing-brightgreen)
-![Typecheck](https://img.shields.io/badge/typecheck-passing-brightgreen)
-![Build](https://img.shields.io/badge/build-passing-brightgreen)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-resource-architecture?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-resource-architecture) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-resource-architecture)
 
 ESLint rules for **resource-oriented** APIs: concern-suffixed files under `src/api/<resource>/`, import boundaries between concerns, and a few filesystem-backed conventions (noop providers).
 
@@ -14,7 +11,7 @@ The same layout rules are usually copy-pasted into `no-restricted-imports`, file
 ## Install
 
 ```sh
-pnpm add -D eslint-plugin-resource-architecture @typescript-eslint/parser
+pnpm add -D @boring-stack-pkg/eslint-plugin-resource-architecture @typescript-eslint/parser
 ```
 
 ## Flat config
@@ -23,7 +20,7 @@ pnpm add -D eslint-plugin-resource-architecture @typescript-eslint/parser
 
 ```js
 import tsParser from "@typescript-eslint/parser";
-import resourceArchitecture from "eslint-plugin-resource-architecture";
+import resourceArchitecture from "@boring-stack-pkg/eslint-plugin-resource-architecture";
 
 export default [
   {
@@ -45,7 +42,7 @@ export default [
 
 ```js
 import tsParser from "@typescript-eslint/parser";
-import resourceArchitecture from "eslint-plugin-resource-architecture";
+import resourceArchitecture from "@boring-stack-pkg/eslint-plugin-resource-architecture";
 
 export default [
   {
@@ -70,11 +67,11 @@ The recommended preset enables all five rules at `"error"`. Override individual 
 
 | Rule | Description |
 | --- | --- |
-| [files-must-be-resource-prefixed](https://github.com/agjs/eslint-plugin-resource-architecture/blob/main/docs/rules/files-must-be-resource-prefixed.md) | Under `src/api/<resource>/`, concern files must be named `<resource>.<concern>.ts`. |
-| [service-must-export-singleton](https://github.com/agjs/eslint-plugin-resource-architecture/blob/main/docs/rules/service-must-export-singleton.md) | `*.service.ts` must export a class and a singleton instance. |
-| [pluggable-providers-must-have-noop](https://github.com/agjs/eslint-plugin-resource-architecture/blob/main/docs/rules/pluggable-providers-must-have-noop.md) | `src/lib/.../providers/` must include a `noop.ts` sibling. |
-| [concern-import-boundaries](https://github.com/agjs/eslint-plugin-resource-architecture/blob/main/docs/rules/concern-import-boundaries.md) | Concern-specific import restrictions (`*.schemas.ts`, `*.types.ts`, etc.). |
-| [no-cross-resource-internal-imports](https://github.com/agjs/eslint-plugin-resource-architecture/blob/main/docs/rules/no-cross-resource-internal-imports.md) | Cross-resource imports must target public surface files only. |
+| [files-must-be-resource-prefixed](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-resource-architecture) | Under `src/api/<resource>/`, concern files must be named `<resource>.<concern>.ts`. |
+| [service-must-export-singleton](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-resource-architecture) | `*.service.ts` must export a class and a singleton instance. |
+| [pluggable-providers-must-have-noop](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-resource-architecture) | `src/lib/.../providers/` must include a `noop.ts` sibling. |
+| [concern-import-boundaries](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-resource-architecture) | Concern-specific import restrictions (`*.schemas.ts`, `*.types.ts`, etc.). |
+| [no-cross-resource-internal-imports](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-resource-architecture) | Cross-resource imports must target public surface files only. |
 
 ## Design notes
 
