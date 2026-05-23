@@ -1,6 +1,6 @@
 # eslint-plugin-stripe-webhooks
 
-[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-stripe-webhooks?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-stripe-webhooks) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-stripe-webhooks)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-stripe-webhooks?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-stripe-webhooks) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/boringstack-xyz/eslint-plugins/tree/main/eslint-plugin-stripe-webhooks)
 
 ESLint plugin enforcing security and correctness rules for Stripe webhook handlers.
 
@@ -31,11 +31,11 @@ export default [
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
       parser: tsParser,
-      parserOptions: { ecmaVersion: "latest", sourceType: "module" }
+      parserOptions: { ecmaVersion: "latest", sourceType: "module" },
     },
     plugins: { "stripe-webhooks": stripeWebhooks },
-    rules: stripeWebhooks.configs.recommended.rules
-  }
+    rules: stripeWebhooks.configs.recommended.rules,
+  },
 ];
 ```
 
@@ -43,14 +43,14 @@ The recommended preset enables all six rules at `"error"`. Override per-rule via
 
 ## Rules
 
-| Rule | Tier | Description |
-|------|------|-------------|
-| [`handler-must-verify-signature`](docs/rules/handler-must-verify-signature.md) | **TIER 1 SECURITY** | Disallow reading or forwarding the webhook payload before `*.constructEvent(...)` succeeds. |
-| [`no-parsed-body-before-verification`](docs/rules/no-parsed-body-before-verification.md) | Security | Disallow parsed-body APIs (`request.json()`, `JSON.parse(body)`, `req.body`, `express.json()`) before verification. |
-| [`require-stripe-signature-header`](docs/rules/require-stripe-signature-header.md) | Security | Require the signature passed into `constructEvent(...)` to come from the Stripe-signature header; forbid hard-coded `whsec_*` secrets. |
-| [`handler-must-handle-event-type`](docs/rules/handler-must-handle-event-type.md) | Correctness | Stripe event handlers must branch on `event.type`. |
-| [`handler-must-be-idempotent`](docs/rules/handler-must-be-idempotent.md) | Correctness | Webhook handlers performing side effects must consult `event.id` for dedupe. |
-| [`service-must-construct-event`](docs/rules/service-must-construct-event.md) | Convention | Stripe-aware classes with a `webhook`-named method must also have a verifier method calling `constructEvent`. |
+| Rule                                                                                     | Tier                | Description                                                                                                                            |
+| ---------------------------------------------------------------------------------------- | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| [`handler-must-verify-signature`](docs/rules/handler-must-verify-signature.md)           | **TIER 1 SECURITY** | Disallow reading or forwarding the webhook payload before `*.constructEvent(...)` succeeds.                                            |
+| [`no-parsed-body-before-verification`](docs/rules/no-parsed-body-before-verification.md) | Security            | Disallow parsed-body APIs (`request.json()`, `JSON.parse(body)`, `req.body`, `express.json()`) before verification.                    |
+| [`require-stripe-signature-header`](docs/rules/require-stripe-signature-header.md)       | Security            | Require the signature passed into `constructEvent(...)` to come from the Stripe-signature header; forbid hard-coded `whsec_*` secrets. |
+| [`handler-must-handle-event-type`](docs/rules/handler-must-handle-event-type.md)         | Correctness         | Stripe event handlers must branch on `event.type`.                                                                                     |
+| [`handler-must-be-idempotent`](docs/rules/handler-must-be-idempotent.md)                 | Correctness         | Webhook handlers performing side effects must consult `event.id` for dedupe.                                                           |
+| [`service-must-construct-event`](docs/rules/service-must-construct-event.md)             | Convention          | Stripe-aware classes with a `webhook`-named method must also have a verifier method calling `constructEvent`.                          |
 
 ## Examples
 
@@ -67,7 +67,11 @@ export async function POST(request: Request) {
 export async function POST(request: Request) {
   const body = await request.text();
   const sig = request.headers.get("stripe-signature");
-  const event = stripe.webhooks.constructEvent(body, sig, process.env.WEBHOOK_SECRET!);
+  const event = stripe.webhooks.constructEvent(
+    body,
+    sig,
+    process.env.WEBHOOK_SECRET!,
+  );
 }
 ```
 
@@ -77,7 +81,9 @@ export async function POST(request: Request) {
 // ❌
 export async function handle(event: Stripe.Event) {
   if (event.type === "payment_intent.succeeded") {
-    await db.payments.insert({ /* ... */ });
+    await db.payments.insert({
+      /* ... */
+    });
   }
 }
 
@@ -85,7 +91,9 @@ export async function handle(event: Stripe.Event) {
 export async function handle(event: Stripe.Event) {
   if (await alreadyProcessed(event.id)) return;
   if (event.type === "payment_intent.succeeded") {
-    await db.payments.insert({ /* ... */ });
+    await db.payments.insert({
+      /* ... */
+    });
   }
 }
 ```

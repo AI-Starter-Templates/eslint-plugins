@@ -1,6 +1,6 @@
 # eslint-plugin-oauth-security
 
-[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-oauth-security?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-oauth-security) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-oauth-security)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-oauth-security?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-oauth-security) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/boringstack-xyz/eslint-plugins/tree/main/eslint-plugin-oauth-security)
 
 ESLint rules enforcing the security-critical OAuth invariants that lint
 can catch statically:
@@ -43,9 +43,9 @@ export default [
     rules: {
       "oauth-security/state-must-be-redis-backed": "error",
       "oauth-security/pkce-required-for-oidc": "error",
-      "oauth-security/state-ttl-bounded": ["error", { maxTtlSeconds: 600 }]
-    }
-  }
+      "oauth-security/state-ttl-bounded": ["error", { maxTtlSeconds: 600 }],
+    },
+  },
 ];
 ```
 
@@ -59,11 +59,11 @@ export default [oauthSecurity.configs.recommended];
 
 ## Rules
 
-| Rule | Description | Default in recommended |
-| --- | --- | --- |
-| [`state-must-be-redis-backed`](docs/rules/state-must-be-redis-backed.md) | State must persist to Redis, not cookies | `error` |
-| [`pkce-required-for-oidc`](docs/rules/pkce-required-for-oidc.md) | OIDC providers must use PKCE | `error` |
-| [`state-ttl-bounded`](docs/rules/state-ttl-bounded.md) | State TTL ≤ configured maximum | `error` |
+| Rule                                                                     | Description                              | Default in recommended |
+| ------------------------------------------------------------------------ | ---------------------------------------- | ---------------------- |
+| [`state-must-be-redis-backed`](docs/rules/state-must-be-redis-backed.md) | State must persist to Redis, not cookies | `error`                |
+| [`pkce-required-for-oidc`](docs/rules/pkce-required-for-oidc.md)         | OIDC providers must use PKCE             | `error`                |
+| [`state-ttl-bounded`](docs/rules/state-ttl-bounded.md)                   | State TTL ≤ configured maximum           | `error`                |
 
 ## License
 

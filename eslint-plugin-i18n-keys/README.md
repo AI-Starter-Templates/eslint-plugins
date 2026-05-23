@@ -1,6 +1,6 @@
 # eslint-plugin-i18n-keys
 
-[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-i18n-keys?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-i18n-keys) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-i18n-keys)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-i18n-keys?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-i18n-keys) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/boringstack-xyz/eslint-plugins/tree/main/eslint-plugin-i18n-keys)
 
 ESLint rule: **static** `t("…")` / `i18n.t("…")` translation keys must exist in a canonical JSON dictionary (nested keys use dot paths).
 
@@ -26,10 +26,10 @@ export default [
     rules: {
       "i18n-keys/static-translation-key-exists": [
         "error",
-        { dictionary: "src/lib/i18n/locales/en/common.json" }
-      ]
-    }
-  }
+        { dictionary: "src/lib/i18n/locales/en/common.json" },
+      ],
+    },
+  },
 ];
 ```
 
@@ -37,8 +37,8 @@ The bundled `recommended` config enables the same rule; **override `dictionary`*
 
 ## Rules
 
-| Rule | Description |
-| --- | --- |
+| Rule                            | Description                                                                                       |
+| ------------------------------- | ------------------------------------------------------------------------------------------------- |
 | `static-translation-key-exists` | String-literal keys must appear in the JSON dictionary (leaf strings define valid terminal keys). |
 
 ## Development

@@ -2,7 +2,7 @@
 
 ![Banner: eslint-plugin-module-boundaries — one semantic concern per TypeScript module](./docs/readme-banner.png)
 
-[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-module-boundaries?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-module-boundaries) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-module-boundaries)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-module-boundaries?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-module-boundaries) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/boringstack-xyz/eslint-plugins/tree/main/eslint-plugin-module-boundaries)
 
 Production-oriented ESLint rules for deterministic TypeScript module cohesion.
 
@@ -32,16 +32,16 @@ export default [
       parserOptions: {
         ecmaVersion: "latest",
         sourceType: "module",
-        ecmaFeatures: { jsx: true }
-      }
+        ecmaFeatures: { jsx: true },
+      },
     },
     plugins: {
-      "module-boundaries": moduleBoundaries
+      "module-boundaries": moduleBoundaries,
     },
     rules: {
-      "module-boundaries/single-semantic-module": "error"
-    }
-  }
+      "module-boundaries/single-semantic-module": "error",
+    },
+  },
 ];
 ```
 
@@ -59,16 +59,16 @@ The rule walks top-level module declarations and classifies each declaration int
 
 Default categories:
 
-| Category | Examples |
-| --- | --- |
-| `type` | `interface`, `type`, ambient declarations, TypeScript namespaces |
-| `constant` | top-level runtime values, literals, objects, arrays, templates, computed values |
-| `function` | function declarations, function expressions, arrow functions |
-| `class` | class declarations and class expressions |
+| Category          | Examples                                                                         |
+| ----------------- | -------------------------------------------------------------------------------- |
+| `type`            | `interface`, `type`, ambient declarations, TypeScript namespaces                 |
+| `constant`        | top-level runtime values, literals, objects, arrays, templates, computed values  |
+| `function`        | function declarations, function expressions, arrow functions                     |
+| `class`           | class declarations and class expressions                                         |
 | `react-component` | PascalCase functions or variables returning JSX, `React.FC`, `FunctionComponent` |
-| `hook` | functions/variables matching `^use[A-Z0-9].*` |
-| `schema` | zod, yup, and valibot schema builder expressions |
-| `enum` | TypeScript enum declarations by default |
+| `hook`            | functions/variables matching `^use[A-Z0-9].*`                                    |
+| `schema`          | zod, yup, and valibot schema builder expressions                                 |
+| `enum`            | TypeScript enum declarations by default                                          |
 
 If more than one category is detected, the rule reports:
 

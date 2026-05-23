@@ -1,6 +1,6 @@
 # eslint-plugin-cache-keys
 
-[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-cache-keys?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-cache-keys) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-cache-keys)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-cache-keys?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-cache-keys) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/boringstack-xyz/eslint-plugins/tree/main/eslint-plugin-cache-keys)
 
 ESLint rules preventing the most common cache-layer bugs:
 
@@ -9,7 +9,7 @@ ESLint rules preventing the most common cache-layer bugs:
 - **`cache-key-must-be-prefixed`** — cache keys must start with a
   configured namespace prefix to prevent collisions when multiple apps
   share a Redis instance.
-- **`cache-key-from-helper`** *(opt-in)* — cache keys must come from a
+- **`cache-key-from-helper`** _(opt-in)_ — cache keys must come from a
   configured helper function. Forces a single source of truth and makes
   invalidation tractable across a codebase.
 
@@ -41,10 +41,10 @@ export default [
       "cache-keys/cache-key-must-be-prefixed": "error",
       "cache-keys/cache-key-from-helper": [
         "error",
-        { helperNames: ["userCacheKey", "stripeEventCacheKey"] }
-      ]
-    }
-  }
+        { helperNames: ["userCacheKey", "stripeEventCacheKey"] },
+      ],
+    },
+  },
 ];
 ```
 
@@ -58,11 +58,11 @@ export default [cacheKeys.configs.recommended];
 
 ## Rules
 
-| Rule | Description | Default in recommended |
-| --- | --- | --- |
-| [`cache-set-must-have-ttl`](docs/rules/cache-set-must-have-ttl.md) | `.set` calls must include `ttlSeconds` | `error` |
-| [`cache-key-must-be-prefixed`](docs/rules/cache-key-must-be-prefixed.md) | Keys must start with a configured prefix | `error` |
-| [`cache-key-from-helper`](docs/rules/cache-key-from-helper.md) | Keys must be built by configured helpers | `off` (opt-in) |
+| Rule                                                                     | Description                              | Default in recommended |
+| ------------------------------------------------------------------------ | ---------------------------------------- | ---------------------- |
+| [`cache-set-must-have-ttl`](docs/rules/cache-set-must-have-ttl.md)       | `.set` calls must include `ttlSeconds`   | `error`                |
+| [`cache-key-must-be-prefixed`](docs/rules/cache-key-must-be-prefixed.md) | Keys must start with a configured prefix | `error`                |
+| [`cache-key-from-helper`](docs/rules/cache-key-from-helper.md)           | Keys must be built by configured helpers | `off` (opt-in)         |
 
 ## License
 

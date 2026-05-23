@@ -1,6 +1,6 @@
 # eslint-plugin-db-transactions
 
-[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-db-transactions?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-db-transactions) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-db-transactions)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-db-transactions?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-db-transactions) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/boringstack-xyz/eslint-plugins/tree/main/eslint-plugin-db-transactions)
 
 ESLint rules enforcing transactional correctness in Drizzle (or any ORM
 with `db.transaction(async (tx) => ...)` APIs):
@@ -36,9 +36,9 @@ export default [
     plugins: { "db-transactions": dbTransactions },
     rules: {
       "db-transactions/multi-write-must-be-transactional": "error",
-      "db-transactions/transaction-uses-tx-not-db": "error"
-    }
-  }
+      "db-transactions/transaction-uses-tx-not-db": "error",
+    },
+  },
 ];
 ```
 
@@ -61,10 +61,10 @@ relevant methods from `writeMethods`.
 
 ## Rules
 
-| Rule | Description | Fixable |
-| --- | --- | --- |
-| [`multi-write-must-be-transactional`](docs/rules/multi-write-must-be-transactional.md) | Multi-step writes in one function must run inside a single transaction | – |
-| [`transaction-uses-tx-not-db`](docs/rules/transaction-uses-tx-not-db.md) | Inside a transaction, write calls must use `tx`, not the outer `db` | – |
+| Rule                                                                                   | Description                                                            | Fixable |
+| -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ------- |
+| [`multi-write-must-be-transactional`](docs/rules/multi-write-must-be-transactional.md) | Multi-step writes in one function must run inside a single transaction | –       |
+| [`transaction-uses-tx-not-db`](docs/rules/transaction-uses-tx-not-db.md)               | Inside a transaction, write calls must use `tx`, not the outer `db`    | –       |
 
 ## License
 

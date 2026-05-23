@@ -1,6 +1,6 @@
 # eslint-plugin-drizzle-conventions
 
-[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-drizzle-conventions?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-drizzle-conventions) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-drizzle-conventions)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-drizzle-conventions?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-drizzle-conventions) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/boringstack-xyz/eslint-plugins/tree/main/eslint-plugin-drizzle-conventions)
 
 ESLint plugin enforcing schema-quality and organization conventions for [Drizzle ORM](https://orm.drizzle.team/).
 
@@ -26,11 +26,11 @@ export default [
     files: ["**/*.ts"],
     languageOptions: {
       parser: tsParser,
-      parserOptions: { ecmaVersion: "latest", sourceType: "module" }
+      parserOptions: { ecmaVersion: "latest", sourceType: "module" },
     },
     plugins: { "drizzle-conventions": drizzleConventions },
-    rules: drizzleConventions.configs.recommended.rules
-  }
+    rules: drizzleConventions.configs.recommended.rules,
+  },
 ];
 ```
 
@@ -51,15 +51,15 @@ rules: {
 
 ## Rules
 
-| Rule | Category | Description |
-|------|----------|-------------|
-| [`tables-must-have-timestamps`](docs/rules/tables-must-have-timestamps.md) | Convention | Tables must declare timestamp columns (`createdAt`, `updatedAt`); optional `requireOnUpdate` enforces `.$onUpdate(...)`. |
-| [`timestamp-must-specify-mode`](docs/rules/timestamp-must-specify-mode.md) | Correctness | Every `timestamp(...)` must pin `mode: 'date'` or `mode: 'string'` so return types are deterministic across drivers. |
-| [`relations-must-cover-fks`](docs/rules/relations-must-cover-fks.md) | Correctness | Every table that declares a `foreignKey(...)` needs a matching `relations(...)` call in the same file. |
-| [`no-raw-sql-outside-allowlist`](docs/rules/no-raw-sql-outside-allowlist.md) | Safety | Disallow drizzle-orm `sql` tagged templates outside an allowlist (migrations, raw queries by default). |
-| [`no-nested-db-transaction`](docs/rules/no-nested-db-transaction.md) | Correctness | Inside a `db.transaction(async (tx) => …)` callback, forbid `db.transaction(...)`; use `tx.transaction(...)` instead. |
-| [`schema-files-must-only-export-schema`](docs/rules/schema-files-must-only-export-schema.md) | Convention | Schema files (`**/schema/**/*.schema.ts` by default) may only export schema artifacts and types. |
-| [`schema-files-must-not-import-driver`](docs/rules/schema-files-must-not-import-driver.md) | Boundary | Schema files must not import database driver packages (`pg`, `drizzle-orm/node-postgres`, etc.) — keeps them runtime-portable. |
+| Rule                                                                                         | Category    | Description                                                                                                                    |
+| -------------------------------------------------------------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| [`tables-must-have-timestamps`](docs/rules/tables-must-have-timestamps.md)                   | Convention  | Tables must declare timestamp columns (`createdAt`, `updatedAt`); optional `requireOnUpdate` enforces `.$onUpdate(...)`.       |
+| [`timestamp-must-specify-mode`](docs/rules/timestamp-must-specify-mode.md)                   | Correctness | Every `timestamp(...)` must pin `mode: 'date'` or `mode: 'string'` so return types are deterministic across drivers.           |
+| [`relations-must-cover-fks`](docs/rules/relations-must-cover-fks.md)                         | Correctness | Every table that declares a `foreignKey(...)` needs a matching `relations(...)` call in the same file.                         |
+| [`no-raw-sql-outside-allowlist`](docs/rules/no-raw-sql-outside-allowlist.md)                 | Safety      | Disallow drizzle-orm `sql` tagged templates outside an allowlist (migrations, raw queries by default).                         |
+| [`no-nested-db-transaction`](docs/rules/no-nested-db-transaction.md)                         | Correctness | Inside a `db.transaction(async (tx) => …)` callback, forbid `db.transaction(...)`; use `tx.transaction(...)` instead.          |
+| [`schema-files-must-only-export-schema`](docs/rules/schema-files-must-only-export-schema.md) | Convention  | Schema files (`**/schema/**/*.schema.ts` by default) may only export schema artifacts and types.                               |
+| [`schema-files-must-not-import-driver`](docs/rules/schema-files-must-not-import-driver.md)   | Boundary    | Schema files must not import database driver packages (`pg`, `drizzle-orm/node-postgres`, etc.) — keeps them runtime-portable. |
 
 ### tables-must-have-timestamps
 
@@ -75,7 +75,7 @@ export const users = pgTable("users", {
   createdAt: timestamp("created_at", { mode: "date" }).notNull(),
   updatedAt: timestamp("updated_at", { mode: "date" })
     .notNull()
-    .$onUpdate(() => new Date())
+    .$onUpdate(() => new Date()),
 });
 ```
 
@@ -108,11 +108,13 @@ Options: `{ allowExternalFile?: boolean }` (default `false`).
 // ❌
 export const posts = pgTable("posts", {
   id: uuid("id").primaryKey(),
-  authorFk: foreignKey({ columns: [], foreignColumns: [] })
+  authorFk: foreignKey({ columns: [], foreignColumns: [] }),
 });
 
 // ✅
-export const posts = pgTable("posts", { /* ... */ });
+export const posts = pgTable("posts", {
+  /* ... */
+});
 export const postsRelations = relations(posts, ({ one }) => ({}));
 ```
 
@@ -139,12 +141,12 @@ Options: `{ transactionMethod?: string }` (default `"transaction"`).
 ```ts
 // ❌
 await db.transaction(async (tx) => {
-  await db.transaction(async (innerTx) => {});  // races, deadlocks on poolers
+  await db.transaction(async (innerTx) => {}); // races, deadlocks on poolers
 });
 
 // ✅
 await db.transaction(async (tx) => {
-  await tx.transaction(async (innerTx) => {});  // savepoint on the same connection
+  await tx.transaction(async (innerTx) => {}); // savepoint on the same connection
 });
 ```
 
@@ -168,11 +170,13 @@ Options: `{ filePattern?: string }` (default `**/schema/**/*.schema.ts`).
 
 ```ts
 // ❌  src/schema/users/users.schema.ts
-export class UsersService {}            // class
-export const helper = () => 1;           // arrow const
+export class UsersService {} // class
+export const helper = () => 1; // arrow const
 
 // ✅  src/schema/users/users.schema.ts
-export const users = pgTable("users", { /* ... */ });
+export const users = pgTable("users", {
+  /* ... */
+});
 export const usersRelations = relations(users, ({ one }) => ({}));
 export type User = typeof users.$inferSelect;
 ```

@@ -1,6 +1,6 @@
 # eslint-plugin-code-flow
 
-[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-code-flow?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-code-flow) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-code-flow)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-code-flow?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-code-flow) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/boringstack-xyz/eslint-plugins/tree/main/eslint-plugin-code-flow)
 
 ESLint plugin for control-flow style rules: guard clauses over wrapped happy paths, and related patterns.
 
@@ -27,16 +27,16 @@ export default [
       parser: tsParser,
       parserOptions: {
         ecmaVersion: "latest",
-        sourceType: "module"
-      }
+        sourceType: "module",
+      },
     },
     plugins: {
-      "code-flow": codeFlow
+      "code-flow": codeFlow,
     },
     rules: {
-      "code-flow/prefer-early-return": "error"
-    }
-  }
+      "code-flow/prefer-early-return": "error",
+    },
+  },
 ];
 ```
 
@@ -50,8 +50,8 @@ export default [codeFlow.configs.recommended];
 
 ## Rules
 
-| Rule | Description |
-|------|-------------|
+| Rule                                                         | Description                                                                    |
+| ------------------------------------------------------------ | ------------------------------------------------------------------------------ |
 | [`prefer-early-return`](./docs/rules/prefer-early-return.md) | Prefer guard clauses over wrapping the function body in a multi-statement `if` |
 
 ## Development

@@ -1,6 +1,6 @@
 # eslint-plugin-structured-logging
 
-[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-structured-logging?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-structured-logging) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-structured-logging)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-structured-logging?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-structured-logging) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/boringstack-xyz/eslint-plugins/tree/main/eslint-plugin-structured-logging)
 
 ESLint rules that enforce structured-logging discipline:
 
@@ -39,9 +39,9 @@ export default [
     rules: {
       "structured-logging/require-event-field": "error",
       "structured-logging/mask-pii-fields": "error",
-      "structured-logging/no-error-stringify": "error"
-    }
-  }
+      "structured-logging/no-error-stringify": "error",
+    },
+  },
 ];
 ```
 
@@ -55,11 +55,11 @@ export default [structuredLogging.configs.recommended];
 
 ## Rules
 
-| Rule | Description | Fixable |
-| --- | --- | --- |
-| [`require-event-field`](docs/rules/require-event-field.md) | Require `event:` in logger payloads | – |
-| [`mask-pii-fields`](docs/rules/mask-pii-fields.md) | Disallow unmasked PII | – |
-| [`no-error-stringify`](docs/rules/no-error-stringify.md) | Disallow `String(error)` / `${error}` / `error.toString()` | yes (when extractor is imported) |
+| Rule                                                       | Description                                                | Fixable                          |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | -------------------------------- |
+| [`require-event-field`](docs/rules/require-event-field.md) | Require `event:` in logger payloads                        | –                                |
+| [`mask-pii-fields`](docs/rules/mask-pii-fields.md)         | Disallow unmasked PII                                      | –                                |
+| [`no-error-stringify`](docs/rules/no-error-stringify.md)   | Disallow `String(error)` / `${error}` / `error.toString()` | yes (when extractor is imported) |
 
 ## License
 

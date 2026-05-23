@@ -1,6 +1,6 @@
 # eslint-plugin-env-access
 
-[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-env-access?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-env-access) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-env-access)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-env-access?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-env-access) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/boringstack-xyz/eslint-plugins/tree/main/eslint-plugin-env-access)
 
 ESLint rules that force every environment-variable read through a single
 validated singleton:
@@ -34,9 +34,9 @@ export default [
     plugins: { "env-access": envAccess },
     rules: {
       "env-access/no-direct-process-env": "error",
-      "env-access/env-var-must-have-schema-entry": "error"
-    }
-  }
+      "env-access/env-var-must-have-schema-entry": "error",
+    },
+  },
 ];
 ```
 
@@ -50,10 +50,10 @@ export default [envAccess.configs.recommended];
 
 ## Rules
 
-| Rule | Description | Fixable |
-| --- | --- | --- |
-| [`no-direct-process-env`](docs/rules/no-direct-process-env.md) | Disallow raw `process.env.X` outside allowed files | – |
-| [`env-var-must-have-schema-entry`](docs/rules/env-var-must-have-schema-entry.md) | Every `env.X` must exist in the schema file | – |
+| Rule                                                                             | Description                                        | Fixable |
+| -------------------------------------------------------------------------------- | -------------------------------------------------- | ------- |
+| [`no-direct-process-env`](docs/rules/no-direct-process-env.md)                   | Disallow raw `process.env.X` outside allowed files | –       |
+| [`env-var-must-have-schema-entry`](docs/rules/env-var-must-have-schema-entry.md) | Every `env.X` must exist in the schema file        | –       |
 
 ## License
 

@@ -1,6 +1,6 @@
 # eslint-plugin-audit-log
 
-[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-audit-log?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-audit-log) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-audit-log)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-audit-log?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-audit-log) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/boringstack-xyz/eslint-plugins/tree/main/eslint-plugin-audit-log)
 
 ESLint rules that keep audit trails honest:
 
@@ -37,9 +37,9 @@ export default [
     rules: {
       "audit-log/mutating-service-must-audit": "error",
       "audit-log/audit-write-must-be-fire-and-forget": "error",
-      "audit-log/audit-metadata-no-pii": "warn"
-    }
-  }
+      "audit-log/audit-metadata-no-pii": "warn",
+    },
+  },
 ];
 ```
 
@@ -53,11 +53,11 @@ export default [auditLog.configs.recommended];
 
 ## Rules
 
-| Rule | Description | Default in recommended | Fixable |
-| --- | --- | --- | --- |
-| [`mutating-service-must-audit`](docs/rules/mutating-service-must-audit.md) | Mutating service methods must call the audit recorder | `error` | – |
-| [`audit-write-must-be-fire-and-forget`](docs/rules/audit-write-must-be-fire-and-forget.md) | Audit writes must not be awaited | `error` | yes |
-| [`audit-metadata-no-pii`](docs/rules/audit-metadata-no-pii.md) | Audit metadata must not include PII keys | `warn` | – |
+| Rule                                                                                       | Description                                           | Default in recommended | Fixable |
+| ------------------------------------------------------------------------------------------ | ----------------------------------------------------- | ---------------------- | ------- |
+| [`mutating-service-must-audit`](docs/rules/mutating-service-must-audit.md)                 | Mutating service methods must call the audit recorder | `error`                | –       |
+| [`audit-write-must-be-fire-and-forget`](docs/rules/audit-write-must-be-fire-and-forget.md) | Audit writes must not be awaited                      | `error`                | yes     |
+| [`audit-metadata-no-pii`](docs/rules/audit-metadata-no-pii.md)                             | Audit metadata must not include PII keys              | `warn`                 | –       |
 
 ## License
 

@@ -1,6 +1,6 @@
 # eslint-plugin-test-conventions
 
-[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-test-conventions?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-test-conventions) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-test-conventions)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-test-conventions?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-test-conventions) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/boringstack-xyz/eslint-plugins/tree/main/eslint-plugin-test-conventions)
 
 ESLint rules that catch the most common test-suite mistakes:
 
@@ -37,9 +37,9 @@ export default [
     rules: {
       "test-conventions/no-focused-tests": "error",
       "test-conventions/no-direct-db-in-tests": "error",
-      "test-conventions/test-file-mirrors-source": "error"
-    }
-  }
+      "test-conventions/test-file-mirrors-source": "error",
+    },
+  },
 ];
 ```
 
@@ -53,11 +53,11 @@ export default [testConventions.configs.recommended];
 
 ## Rules
 
-| Rule | Description | Fixable |
-| --- | --- | --- |
-| [`no-focused-tests`](docs/rules/no-focused-tests.md) | Disallow `.only` and bare aliases (`fdescribe`, `fit`) | – |
-| [`no-direct-db-in-tests`](docs/rules/no-direct-db-in-tests.md) | Tests must go through the helpers entrypoint | – |
-| [`test-file-mirrors-source`](docs/rules/test-file-mirrors-source.md) | Every test file must mirror an existing source file | – |
+| Rule                                                                 | Description                                            | Fixable |
+| -------------------------------------------------------------------- | ------------------------------------------------------ | ------- |
+| [`no-focused-tests`](docs/rules/no-focused-tests.md)                 | Disallow `.only` and bare aliases (`fdescribe`, `fit`) | –       |
+| [`no-direct-db-in-tests`](docs/rules/no-direct-db-in-tests.md)       | Tests must go through the helpers entrypoint           | –       |
+| [`test-file-mirrors-source`](docs/rules/test-file-mirrors-source.md) | Every test file must mirror an existing source file    | –       |
 
 ## License
 

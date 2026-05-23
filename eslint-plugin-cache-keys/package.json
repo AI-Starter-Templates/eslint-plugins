@@ -8,7 +8,7 @@
   "author": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AI-Starter-Templates/eslint-plugins.git",
+    "url": "git+https://github.com/boringstack-xyz/eslint-plugins.git",
     "directory": "eslint-plugin-cache-keys"
   },
   "publishConfig": {

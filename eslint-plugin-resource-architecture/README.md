@@ -1,6 +1,6 @@
 # eslint-plugin-resource-architecture
 
-[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-resource-architecture?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-resource-architecture) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-resource-architecture)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-resource-architecture?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-resource-architecture) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/boringstack-xyz/eslint-plugins/tree/main/eslint-plugin-resource-architecture)
 
 ESLint rules for **resource-oriented** APIs: concern-suffixed files under `src/api/<resource>/`, import boundaries between concerns, and a few filesystem-backed conventions (noop providers).
 
@@ -30,11 +30,11 @@ export default [
       parserOptions: {
         ecmaVersion: "latest",
         sourceType: "module",
-        ecmaFeatures: { jsx: true }
-      }
+        ecmaFeatures: { jsx: true },
+      },
     },
-    ...resourceArchitecture.configs.recommended
-  }
+    ...resourceArchitecture.configs.recommended,
+  },
 ];
 ```
 
@@ -52,12 +52,12 @@ export default [
       parserOptions: {
         ecmaVersion: "latest",
         sourceType: "module",
-        ecmaFeatures: { jsx: true }
-      }
+        ecmaFeatures: { jsx: true },
+      },
     },
     plugins: { "resource-architecture": resourceArchitecture },
-    rules: resourceArchitecture.configs.recommended.rules
-  }
+    rules: resourceArchitecture.configs.recommended.rules,
+  },
 ];
 ```
 
@@ -65,13 +65,13 @@ The recommended preset enables all five rules at `"error"`. Override individual 
 
 ## Rules
 
-| Rule | Description |
-| --- | --- |
-| [files-must-be-resource-prefixed](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-resource-architecture) | Under `src/api/<resource>/`, concern files must be named `<resource>.<concern>.ts`. |
-| [service-must-export-singleton](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-resource-architecture) | `*.service.ts` must export a class and a singleton instance. |
-| [pluggable-providers-must-have-noop](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-resource-architecture) | `src/lib/.../providers/` must include a `noop.ts` sibling. |
-| [concern-import-boundaries](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-resource-architecture) | Concern-specific import restrictions (`*.schemas.ts`, `*.types.ts`, etc.). |
-| [no-cross-resource-internal-imports](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-resource-architecture) | Cross-resource imports must target public surface files only. |
+| Rule                                                                                                                                  | Description                                                                         |
+| ------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| [files-must-be-resource-prefixed](https://github.com/boringstack-xyz/eslint-plugins/tree/main/eslint-plugin-resource-architecture)    | Under `src/api/<resource>/`, concern files must be named `<resource>.<concern>.ts`. |
+| [service-must-export-singleton](https://github.com/boringstack-xyz/eslint-plugins/tree/main/eslint-plugin-resource-architecture)      | `*.service.ts` must export a class and a singleton instance.                        |
+| [pluggable-providers-must-have-noop](https://github.com/boringstack-xyz/eslint-plugins/tree/main/eslint-plugin-resource-architecture) | `src/lib/.../providers/` must include a `noop.ts` sibling.                          |
+| [concern-import-boundaries](https://github.com/boringstack-xyz/eslint-plugins/tree/main/eslint-plugin-resource-architecture)          | Concern-specific import restrictions (`*.schemas.ts`, `*.types.ts`, etc.).          |
+| [no-cross-resource-internal-imports](https://github.com/boringstack-xyz/eslint-plugins/tree/main/eslint-plugin-resource-architecture) | Cross-resource imports must target public surface files only.                       |
 
 ## Design notes
 

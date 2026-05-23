@@ -1,6 +1,6 @@
 # eslint-plugin-comment-hygiene
 
-[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-comment-hygiene?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-comment-hygiene) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/AI-Starter-Templates/eslint-plugins/tree/main/eslint-plugin-comment-hygiene)
+[![npm](https://img.shields.io/npm/v/@boring-stack-pkg/eslint-plugin-comment-hygiene?logo=npm)](https://www.npmjs.com/package/@boring-stack-pkg/eslint-plugin-comment-hygiene) [![source](https://img.shields.io/badge/source-github-blue?logo=github)](https://github.com/boringstack-xyz/eslint-plugins/tree/main/eslint-plugin-comment-hygiene)
 
 ESLint rules that catch agent-generated comment patterns:
 
@@ -41,9 +41,9 @@ export default [
     plugins: { "comment-hygiene": commentHygiene },
     rules: {
       "comment-hygiene/no-narration-comments": "error",
-      "comment-hygiene/no-pr-reference-comments": "error"
-    }
-  }
+      "comment-hygiene/no-pr-reference-comments": "error",
+    },
+  },
 ];
 ```
 
@@ -57,10 +57,10 @@ export default [commentHygiene.configs.recommended];
 
 ## Rules
 
-| Rule | Description | Fixable |
-| --- | --- | --- |
-| [`no-narration-comments`](docs/rules/no-narration-comments.md) | Disallow narrative comments like "Here we…", "Now we…", "First, …", "Let's …" | – |
-| [`no-pr-reference-comments`](docs/rules/no-pr-reference-comments.md) | Disallow PR / issue references (`#123`, `PR 42`, GitHub URLs) in comments | – |
+| Rule                                                                 | Description                                                                   | Fixable |
+| -------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ------- |
+| [`no-narration-comments`](docs/rules/no-narration-comments.md)       | Disallow narrative comments like "Here we…", "Now we…", "First, …", "Let's …" | –       |
+| [`no-pr-reference-comments`](docs/rules/no-pr-reference-comments.md) | Disallow PR / issue references (`#123`, `PR 42`, GitHub URLs) in comments     | –       |
 
 ## License
 
