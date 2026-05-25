@@ -39,6 +39,11 @@ jobs:
       - name: Test
         run: pnpm -r test
 
+      # npm <11.6 can surface trusted-publishing / provenance failures as
+      # misleading E404 on PUT even when NPM_TOKEN is valid (npm/cli#9088).
+      - name: Upgrade npm
+        run: npm install -g npm@latest
+
       - name: Create release PR or publish
         uses: changesets/action@v1
         with:
